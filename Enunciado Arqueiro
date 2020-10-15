@@ -1,0 +1,22 @@
+Kégolas é o melhor arqueiro do Reino dos Elfos. Às vezes ele é capaz de derrotar sozinho um exército de Orks, tamanha sua agilidade. Como consequência disso, em um campo de batalha representado por uma matriz de N linhas e M colunas, Kégolas é capaz de matar todos os Orks
+coincidentes horizontal e verticalmente à sua posição (ou seja, mesma linha e coluna que ele). Como Eregorn e Kégolas são muito amigos e quase sempre batalham juntos, Eregorn necessita saber se Kégolas precisa de ajuda, caso não consiga matar todos os Orks sozinhos, e para isto solicitou sua ajuda para desenvolver um algoritmo que o responda se Kégolas precisa de ajuda ou não, dada a quantidade de Orks mortos a partir de uma quantidade C de movimentos realizados por Kégolas no campo de batalha. Apesar de ser um Elfo muito poderoso e veloz, não pode andar mais que 4 células além da sua posição em uma única movimentação, latitudinal e longitudinalmente. 
+
+
+Entrada
+
+A entrada contém vários casos de testes. A primeira linha de um caso de teste contém dois números inteiros N, M e C (1 ≤ N, M, C ≤ 100), separados por espaços em branco, indicando respectivamente o número de linhas e o número de colunas do campo de batalha e a quantidade de troca de posições que Kégolas realizou. As N linhas seguintes da entrada descrevem uma linha de células do campo de batalha e contém, cada uma, uma cadeia com M caracteres. 
+
+Cada célula do campo de batalha pode conter um dos seguintes caracteres:
+
+    ‘^’ — célula de grama;
+    ‘O’ — célula que contém um Ork;
+    ‘K’ — célula em que Kégolas está;
+
+O último caso de teste é seguido por uma linha que contém apenas três números zero separados por um espaço em branco.
+
+
+Saída
+
+A saída é formada por um 'Sim', caso Kégolas precise da ajuda de Eregorn (se não será capaz de matar todos os Orks), ou um 'Nao', caso não precise da ajuda de Eregorn (será capaz de matar todos os Orks).
+
+

@@ -1,0 +1,20 @@
+1) Escreva uma função que receba um caractere c e transforme-o em uma string (cadeia de caracteres), ou seja, devolva uma string de comprimento 1 tendo c como único elemento.
+
+
+2) Discuta, passo a passo, o efeito do seguinte fragmento de código:
+
+       int *v;  	//1
+       v = malloc (10 * sizeof (int));		//2
+
+//1 - declaro um ponteiro do tipo inteiro
+//2 - meu ponteiro recebe a alocação que quero fazer. 
+	neste caso, terei uma alocação de tamanho 10 vezes o inteiro que será ~inserido~. 
+
+
+3) Discuta o efeito do seguinte fragmento de código:
+
+       x = malloc (10 * sizeof *x);	//1
+
+//1 - Aloca 10 posições de um ponteiro;
+
+

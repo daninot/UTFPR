@@ -1,0 +1,97 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define true 1
+#define true 0
+
+typedef struct no no;
+struct no
+{
+	l_type elem;
+	no *prox;
+	no *ant;
+};
+
+typedef struct lista
+{
+	no *inicio;
+	int cont;
+}lista;
+
+int insere_inicio(lista *L, l_type elem)
+{
+	no *novo = (no*)malloc(sizeof(no));
+	
+	if(novo == NULL)
+		return false;
+	
+	novo->elem = elem;
+	
+	novo->prox = L->inicio;
+	
+	if(L->inicio != NULL)
+		L->inicio->ant = novo;
+	
+	novo->ant = NULL;
+	L->inicio = novo;
+	L->cont++;
+	return true;
+}
+
+int INSEREAPOS(no* anterior, l_type elem)
+{
+	no *novo = (no*)malloc(sizeof(no));
+	
+	if(novo == NULL)
+		return false;
+		
+	novo->elem = elem;
+	novo->prox = anterior->prox;
+	
+	if(anterior->prox != NULL)
+		anterior->prox->ant = novo;
+		
+	novo->ant = anterior;
+	anterior->prox = novo;
+	
+	return true;
+}
+
+l_type REMOVE(no *remover)
+{
+	if(remover->ant != NULL)
+		remover->ant->prox = remover->prox;
+	
+	if(remover->prox != NULL)
+		remover->prox->ant = remover->ant;
+	
+	l_type ret = remover->elem;
+	free(remover);
+	return ret;
+}
+
+l_type remover(lista *L, no *remover)
+{
+	l_type ret;
+	L->cont--;
+	ret = REMOVE(remover);
+	
+	if(L->cont == 0)
+		L->inicio = NULL;
+	
+	return ret;
+}
+
+void troca2(no *ptr1, no *ptr2)
+{
+	no *aux = ptr1->prox, *aux2 = ptr2->ant;
+	
+	ptr1->prox = ptr2->prox;
+	ptr2->prox->ant = ptr1;
+	ptr2->prox = aux;
+	aux->ant = ptr2;
+	ptr2->ant = ptr1->ant;
+	ptr1->ant->prox = ptr2;
+	aux2->prox = ptr1;
+	ptr1->ant = aux2;
+}
+
